@@ -1,0 +1,20 @@
+app:
+  environment: 'staging'
+
+spring:
+  application:
+    name: 'OskNie'
+  main:
+    banner-mode: 'off'
+logging:
+    level:
+      root: 'ERROR'
+custom:
+  login-url: 'test-login'
+  credentials:
+    user: 'test-user'
+    password: 'pass'
+my:
+  bool_value: 'false'
+  custom_property: 'beka hahaah'
+#my.custom_property="CustomPropertyNameHere"
