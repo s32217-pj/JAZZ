@@ -1,5 +1,5 @@
 app:
-  environment: 'staging'
+  environment: 'dev'
 
 spring:
   application:

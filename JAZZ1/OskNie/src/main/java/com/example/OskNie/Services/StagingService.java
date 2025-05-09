@@ -1,8 +1,7 @@
 package com.example.OskNie.Services;
-import org.springframework.stereotype.Service;
+
 import com.example.OskNie.Interfaces.HandlerServiceInterface;
 
-@Service
 public class StagingService implements HandlerServiceInterface {
 
     @Override
