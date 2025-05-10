@@ -1,16 +1,26 @@
 package com.pjatk.Osk.Nie.Models;
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Movie {
-    private static long IDCounter = 0;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long ID;
 
-    private final long ID; //ID is get only
     private String name;
     private MovieCategory category;
 
     private String director;
 
+    @Nonnull
+    private boolean isAvailable = false;
+
+    public Movie(){}
     public Movie(String name, MovieCategory category, String director) {
-        this.ID=IDCounter++;
         this.name = name;
         this.category = category;
         this.director = director;
@@ -42,6 +52,14 @@ public class Movie {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public void setAvailable(boolean value){
+        this.isAvailable = value;
+    }
+
+    public boolean isAvailable(){
+        return this.isAvailable;
     }
 
 }

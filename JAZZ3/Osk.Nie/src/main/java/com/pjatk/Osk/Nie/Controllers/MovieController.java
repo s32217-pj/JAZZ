@@ -26,7 +26,7 @@ public class MovieController {
 
     @GetMapping("/movies")
     public ResponseEntity<List<Movie>> GetAllMovies(){
-        return ResponseEntity.ok().body(new ArrayList<>(movieService.getAllMovies().values()));
+        return ResponseEntity.ok().body(new ArrayList<>(movieService.getAllMovies()));
     }
 
     @GetMapping("/movies/{id}")
@@ -55,5 +55,11 @@ public class MovieController {
     public ResponseEntity<Void> RemoveMovie(@PathVariable long id){
         movieService.removeIfValid(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("/movies/setavailable/{id}")
+    public ResponseEntity<Void> SetMovieAvailable(@PathVariable long id){
+        movieService.setAvailable(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
